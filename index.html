@@ -34,32 +34,38 @@
   <!-- NotoSans TC -->
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&amp;display=swap" rel="stylesheet">
 
-  
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId            : 'your-app-id',
-      autoLogAppEvents : true,
-      xfbml            : true,
-      version          : 'v2.11'
-    });
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "https://connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
 
 </head>
 
 <body>
+  <!-- Load Facebook SDK for JavaScript -->
+  <div id="fb-root"></div>
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        xfbml            : true,
+        version          : 'v6.0'
+      });
+    };
+
+    (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/zh_TW/sdk/xfbml.customerchat.js';
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+
+  <!-- Your customer chat code -->
   <div class="fb-customerchat"
-  page_id="2626789147354244"
-  minimized="true">
+    attribution=setup_tool
+    page_id="2626789147354244"
+    theme_color="#ffc300"
+    logged_in_greeting="哈囉！有什麼可以問題可以立即詢問哦😄"
+    logged_out_greeting="哈囉！有什麼可以問題可以立即詢問哦😄">
+  </div>
+
+
 </div>
   <div class="top_container">
     <!-- header section strats -->
@@ -101,9 +107,8 @@
                   <a class="nav-link" href="" onclick="alert('尚未開放')"> 作業上傳 </a>
                 </li>
 
-                <!--contact-->
                 <li class="nav-item">
-                  <a class="nav-link" href="" onclick="alert('測試中敬請期待')"> 問題聯絡 </a>
+                  <a class="nav-link" href="contact.html"> 問題聯絡 </a>
                 </li>
 
               </ul>
@@ -134,7 +139,7 @@
         </div>
         <div class="hero_img-container">
           <div>
-            <img src="images/head.JPG" alt="" class="img-fluid">
+            <img src="images/head.jpg" alt="" class="img-fluid">
           </div>
         </div>
       </div>
