@@ -27,38 +27,35 @@
 
   <link rel="stylesheet" href="css/css-circular-prog-bar.css">
 
-  <script>
-    //宣告預設表單內容為空 （你想要的話也可以加東西）
-        var initSubject='',initBody='';
-     
-        //按下傳送按鈕後執行
-        function submitHandler(){
-            var to = "410433@apps.ccsh.ptc.edu.tw";//寫死的傳送對象
-            var name = nameText.value;//讀取ID為 nameTextuser 物件中的值
-            var email = emailText.value;
-            var tel = telText.value;
-            var subject = nameText.value + '透過官方網站傳訊息囉';
-    //把user填的資料都塞到 mail body 中
-            var body = ""+bodyText.value+'%0A%0A%0A';//%0A是換行 換了三行
-                body += "From："+nameText.value+'%0A';
-                body += "Email："+emailText.value+'%0A';
-                body += "Tel："+telText.value;
-    //傳送的主要程式碼
-            mailTo.href="mailto:"+to+"?subject="+subject+"&body="+body;
-            mailTo.click();
-        }
-    //在body onload
-        function init(){
-            subText.value=initSubject;
-            toText.value=initTo;
-            bodyText.value=initBody;
-        }
-    </script>
-
-
 </head>
 
 <body class="sub_page">
+    <!-- Load Facebook SDK for JavaScript -->
+    <div id="fb-root"></div>
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          xfbml            : true,
+          version          : 'v6.0'
+        });
+      };
+  
+      (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/zh_TW/sdk/xfbml.customerchat.js';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+  
+    <!-- Your customer chat code -->
+    <div class="fb-customerchat"
+      attribution=setup_tool
+      page_id="2626789147354244"
+      theme_color="#ffc300"
+      logged_in_greeting="哈囉！有什麼可以問題可以立即詢問哦😄"
+      logged_out_greeting="哈囉！有什麼可以問題可以立即詢問哦😄">
+    </div>
   <div class="top_container ">
     <!-- header section strats -->
     <header class="header_section">
@@ -123,30 +120,28 @@
               問題聯絡
             </h2>
           </div>
-          <form action="">
+          <iframe name="hidden_iframe" style="display:none;"></iframe>
+          <form action="https://script.google.com/macros/s/AKfycbyPmoa0YQAQUwa_VcLjc9CcphMMD_onooR4uoNRYLE3-33Asr4/exec" method="post" target="hidden_iframe">
             <div class="contact_form-container">
               <div>
+                <input type="hidden" name="method" value="write">
                 <div>
-                  <input id="nameText" type="text" placeholder="您的名字" required>
+                  <input name="name" type="text" placeholder="您的名字" required>
                 </div>
                 <div>
-                  <input id="emailText" type="email" placeholder="您的Email" required>
+                  <input name="email" type="email" placeholder="您的Email" required>
                 </div>
                 <div>
-                  <input id="telText" type="tel" type="text" placeholder="您的手機號碼" required>
+                  <input name="tel" type="tel" type="text" placeholder="您的連絡電話" required>
                 </div>
                 <div class="mt-5">
-                  <input id="bodyText" type="text" placeholder="留下的訊息">
+                  <input name="message" type="text" placeholder="留下的訊息" required>
                 </div>
                 <div class="mt-5">
-                  <button type="submit" onclick="submitHandler();">
-                    傳送
-                  </button>
+                  <button type="submit">傳送</button>
                 </div>
               </div>
-
             </div>
-
           </form>
         </div>
         <div class="col-md-6">

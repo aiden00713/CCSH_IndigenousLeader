@@ -43,6 +43,32 @@
 </head>
 
 <body class="sub_page">
+    <!-- Load Facebook SDK for JavaScript -->
+    <div id="fb-root"></div>
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          xfbml            : true,
+          version          : 'v6.0'
+        });
+      };
+  
+      (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/zh_TW/sdk/xfbml.customerchat.js';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+  
+    <!-- Your customer chat code -->
+    <div class="fb-customerchat"
+      attribution=setup_tool
+      page_id="2626789147354244"
+      theme_color="#ffc300"
+      logged_in_greeting="哈囉！有什麼可以問題可以立即詢問哦😄"
+      logged_out_greeting="哈囉！有什麼可以問題可以立即詢問哦😄">
+    </div>
   <div class="top_container ">
     <!-- header section strats -->
     <header class="header_section">
