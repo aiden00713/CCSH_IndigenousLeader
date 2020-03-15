@@ -3,7 +3,16 @@
 
 <head>
   <!-- Basic -->
-  <meta charset="utf-8" />
+  <meta charset="utf-8">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145776758-6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    
+    gtag('config', 'UA-145776758-6');
+  </script>
   <!-- Mobile Metas -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <!-- Site Metas -->
@@ -26,6 +35,13 @@
   <link href="css/responsive.css" rel="stylesheet" />
 
   <link rel="stylesheet" href="css/css-circular-prog-bar.css">
+
+  <script>
+  function confirmation() { 
+    alert("已提交訊息，自動回到首頁");
+    window.location = "index.html"; 
+  } 
+  </script>
 
 </head>
 
@@ -132,13 +148,13 @@
                   <input name="email" type="email" placeholder="您的Email" required>
                 </div>
                 <div>
-                  <input name="tel" type="tel" type="text" placeholder="您的連絡電話" required>
+                  <input name="tel" type="tel" placeholder="您的連絡電話" required>
                 </div>
                 <div class="mt-5">
                   <input name="message" type="text" placeholder="留下的訊息" required>
                 </div>
                 <div class="mt-5">
-                  <button type="submit">傳送</button>
+                  <button type="submit" onclick="confirmation();">傳送</button>
                 </div>
               </div>
             </div>
