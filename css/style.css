@@ -225,9 +225,9 @@ a:focus {
 
 /* end hero section */
 
-/* common style for some sections */
+/* common style for some sections*/
 .common_style>section {
-  padding: 50px 0;
+  padding: 50px 0; 
 }
 
 .common_style .row {
