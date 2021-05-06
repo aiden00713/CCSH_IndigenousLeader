@@ -277,11 +277,11 @@ a:focus {
 /* why section */
 
 .why_section {
-  text-align: right;
+  text-align: center;
 }
 
 .why_section a {
-  background-color: #6ebca8;
+  background-color: #1E99C3;
   color: #fefeff;
 }
 
@@ -574,6 +574,14 @@ a:focus {
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+.iframe-rwd-appsscript {
+  position: relative;
+  padding-bottom: 100%;
+  padding-top: 100px;
+  height: 0;
+  overflow: hidden;
 }
 
 /* end footer section*/
